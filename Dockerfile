@@ -10,10 +10,10 @@ RUN apt-get autoclean
 RUN apt-get update
 
 # 1. development packages
-RUN git \
+RUN apt-get install -y \
+    git \
     zip \
-    unzip \
-    nano
+    unzip
 
 RUN curl -L https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar -o /phpcs
 
