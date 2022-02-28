@@ -5,6 +5,16 @@ LABEL repository="https://github.com/chindit/actions-phpcs"
 LABEL homepage="https://github.com/chindit/actions-phpcs"
 LABEL maintainer="David Lumaye <littletiger58@gmail.com>"
 
+RUN apt-get autoclean
+
+RUN apt-get update
+
+# 1. development packages
+RUN git \
+    zip \
+    unzip \
+    nano
+
 RUN curl -L https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar -o /phpcs
 
 # Install the WordPress rules
